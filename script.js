@@ -9,13 +9,15 @@ Each function is annotated with a comment explaining what it should do.
 By the end of the lab, all tests in the report should be passing.
 */
 
+const { append } = require("express/lib/response")
+
 const studentInformation = {
-  name: "FILL_IN_YOUR_NAME_HERE",
-  grade: "FILL_IN_YOUR_GRADE_HERE",
-  advisor: "FILL_IN_YOUR_ADVISOR_HERE",
-  major: "FILL_IN_YOUR_MAJOR_HERE",
-  graduationYear: "FILL_IN_YOUR_GRADUATION_YEAR_HERE",
-  imageUrl: "ADD_A_URL_TO_ANY_IMAGE_HERE",
+  name: "Andrew Valerio",
+  grade: "Sophmore",
+  advisor: "IDK",
+  major: "Computer  Science",
+  graduationYear: "2024",
+  imageUrl: "https://media.wired.com/photos/5b899992404e112d2df1e94e/master/pass/trash2-01.jpg" ,
 }
 
 let semester = "Spring Semester"
@@ -58,7 +60,24 @@ const gpaPointsLookup = {
 /**
  * QUERY SELECTORS VARIABLES GO HERE
  */
+ const studentNameEl = document.querySelector("#student-name");
+ const studentAdvisorEl = document.querySelector("#student-advisor")
+ const studentMajorEl = document.querySelector("#student-major")
+ const studentGradeEl = document.querySelector("#student-grade-level")
+ const studentGraduationYearEl = document.querySelector("#student-graduation-year")
+ const studentImageEl = document.querySelector("#student-image")
+ 
+//const studentInfoE1 = document.querySelector(".student")
 const dropdownEl = document.querySelector(".dropdown")
+//const mainE1 = document.querySelector(".main")
+//const optionsE1 = document.querySelector(".options")
+//const tableE1 = document.querySelector(".table")
+//const reportCardE1 = document.querySelector(".report-card")
+//const cardE1 = document.querySelector(".card")
+//const titleE1 = document.querySelector(".title")
+//const navE1 = document.querySelector(".nav")
+
+
 // ADD more query selectors here
 
 /**
@@ -71,7 +90,7 @@ const dropdownEl = document.querySelector(".dropdown")
  * @param {String} studentName - the name of the student
  */
 function updateStudentName(studentName) {
-  // code goes here
+  studentNameEl.innerHTML = studentName;
 }
 
 /**
@@ -80,7 +99,7 @@ function updateStudentName(studentName) {
  * @param {String|Number} studentGradeLevel - the grade level of the student
  */
 function updateStudentGradeLevel(studentGradeLevel) {
-  // code goes here
+  studentGradeEl.innerHTML = studentGradeLevel;
 }
 
 /**
@@ -89,7 +108,7 @@ function updateStudentGradeLevel(studentGradeLevel) {
  * @param {String} studentAdvisor - the advisor of the student
  */
 function updateStudentAdvisor(studentAdvisor) {
-  // code goes here
+  studentAdvisorEl.innerHTML = studentAdvisor;
 }
 
 /**
@@ -98,7 +117,7 @@ function updateStudentAdvisor(studentAdvisor) {
  * @param {String} studentMajor - the major of the student
  */
 function updateMajor(studentMajor) {
-  // code goes here
+  studentMajorEl.innerHTML = studentMajor;
 }
 
 /**
@@ -107,7 +126,7 @@ function updateMajor(studentMajor) {
  * @param {Number} graduationyear - the year the student graduates
  */
 function updateStudentGraduationYear(graduationYear) {
-  // code goes here
+  studentGraduationYearEl.innerHTML = graduationYear;
 }
 
 /**
@@ -117,7 +136,7 @@ function updateStudentGraduationYear(graduationYear) {
  * @param {String} url - a link to an image
  */
 function updateStudentImage(imageUrl) {
-  // code goes here
+  studentImageEl.src = imageUrl;
 }
 
 /**
@@ -270,5 +289,5 @@ function calculateSemesterGpa(reportCardTableElement) {
 }
 
 window.onload = function () {
-  // execute your functions here to make sure they run as soon as the page loads
+  populateStudentInfo(studentInformation);
 }
